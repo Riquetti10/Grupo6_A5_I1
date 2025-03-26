@@ -28,30 +28,109 @@ public class VistaIngresarDatos extends javax.swing.JFrame {
     private void initComponents() {
 
         btnCerrarIn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtIngresarPosi = new javax.swing.JTextField();
+        btnEnviarPosi = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        txtEnviarVari = new javax.swing.JTextField();
+        btnEnviarVari = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnCerrarIn.setText("Cerrar");
+
+        jLabel1.setText("UNIDAD EDUCATIVA TECNICO SALESIANO");
+
+        jLabel2.setText("Ingrese la posicion del vector ");
+
+        btnEnviarPosi.setText("Enviar ");
+        btnEnviarPosi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnviarPosiActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Ingrese la variable del vector ");
+
+        txtEnviarVari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEnviarVariActionPerformed(evt);
+            }
+        });
+
+        btnEnviarVari.setText("Enviar");
+        btnEnviarVari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnviarVariActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(487, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCerrarIn, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(21, 21, 21))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(146, 146, 146)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(196, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtIngresarPosi))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtEnviarVari))
+                .addGap(83, 83, 83))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(btnEnviarPosi, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnEnviarVari, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(107, 107, 107))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(262, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1)
+                .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtIngresarPosi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEnviarVari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEnviarPosi)
+                    .addComponent(btnEnviarVari))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(btnCerrarIn)
-                .addContainerGap())
+                .addGap(19, 19, 19))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnEnviarPosiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarPosiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEnviarPosiActionPerformed
+
+    private void txtEnviarVariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnviarVariActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEnviarVariActionPerformed
+
+    private void btnEnviarVariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarVariActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEnviarVariActionPerformed
 
     /**
      * @param args the command line arguments
@@ -90,5 +169,12 @@ public class VistaIngresarDatos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnCerrarIn;
+    public javax.swing.JButton btnEnviarPosi;
+    public javax.swing.JButton btnEnviarVari;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    public javax.swing.JTextField txtEnviarVari;
+    public javax.swing.JTextField txtIngresarPosi;
     // End of variables declaration//GEN-END:variables
 }
