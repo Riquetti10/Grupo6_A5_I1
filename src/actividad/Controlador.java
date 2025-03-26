@@ -49,6 +49,8 @@ public class Controlador implements ActionListener {
         
         vista.itmMostrarList.addActionListener(this);
         vistaLis.btnCerrarList.addActionListener(this);
+        vista.itmVector.addActionListener(this);
+        vistaVec.btnCerrarVector.addActionListener(this);
     }
 
     @Override
@@ -83,7 +85,24 @@ public class Controlador implements ActionListener {
             vistaLis.setVisible(true);
         }else if(buttonPressed == vistaLis.btnCerrarList){
             vistaLis.setVisible(false);
+        if (buttonPressed == vistaVec.btnEnviarPosi) {
+    String input = vistaVec.txtPosicionVec.getText();
+    // Validamos que el input contenga solo dígitos
+    if (input.matches("\\d+")) {
+        int tam = Integer.parseInt(input);
+        // Validamos que el tamaño sea mayor a cero
+        if (tam > 0) {
+            modelo.setTamaño(tam);
+            modelo.crearVector();
+            vistaVec.mostrarMensaje("Vector creado con tamaño: " + tam);
+        } else {
+            vistaVec.mostrarError("El tamaño debe ser mayor a 0.");
         }
+    } else {
+        vistaVec.mostrarError("Por favor, ingrese un número válido.");
+    }
+}
+
 
     }
 
