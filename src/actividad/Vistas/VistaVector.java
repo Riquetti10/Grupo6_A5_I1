@@ -4,18 +4,24 @@
  * and open the template in the editor.
  */
 package actividad.Vistas;
-
-/**
- *
- * @author PC_01
- */
-public class VistaVector extends javax.swing.JFrame {
+import actividad.Modelo;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+public class VistaVector extends javax.swing.JFrame implements ActionListener {
 
     /**
      * Creates new form VistaVector
      */
-    public VistaVector() {
+    public boolean valido=false;
+    Modelo modelo;
+    public VistaVector (Modelo modelo) {
         initComponents();
+        this.modelo=modelo;
+        this.btnEnviarPosi.addActionListener(this);
+    }
+
+    public VistaVector() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -73,7 +79,7 @@ public class VistaVector extends javax.swing.JFrame {
                         .addGap(133, 133, 133))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(txtPosicionVec, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65)
+                        .addGap(95, 95, 95)
                         .addComponent(jLabel4)
                         .addGap(85, 85, 85))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -119,35 +125,26 @@ public class VistaVector extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaVector.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaVector.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaVector.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaVector.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
+        Modelo modelo = new Modelo();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaVector().setVisible(true);
+                new VistaVector(modelo).setVisible(true); // Pasar el modelo al constructor
             }
-        });
+    });
+}
+    @Override
+    public void actionPerformed(ActionEvent e) {// Crear y mostrar la nueva ventana (nuevo JFrame) 
+        //INCOMPLETO, FALTA ENVIAR EL TAMAÑO A UN CONTROLADOR o modelo
+        if (e.getSource()== btnEnviarPosi){
+            int tamaño = Integer.parseInt(txtPosicionVec.getText());
+            if (tamaño>0){
+                modelo.Vector(tamaño);
+                this.setVisible(false);
+                valido=true;
+            }else{
+                valido=false;
+            }
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -161,11 +158,4 @@ public class VistaVector extends javax.swing.JFrame {
     public javax.swing.JTextField txtPosicionVec;
     // End of variables declaration//GEN-END:variables
 
-    public void mostrarMensaje(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void mostrarError(String el_tamaño_debe_ser_mayor_a_0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
